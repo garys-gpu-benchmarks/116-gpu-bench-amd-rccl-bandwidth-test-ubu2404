@@ -26,14 +26,14 @@ Build src/rccl_perf.cpp and run bin/all_reduce_perf. Copied sibling *_perf names
 
 all_reduce_perf stdout in rccl_all_reduce.txt plus one CSV row. A single row is duplicated to two samples
 
-sample_index,status,collective,num_gpus,bytes,algbw_gb_s,busbw_gb_s,latency_us,error_message
+sample_index,status,collective,num_gpus,bytes,allreduce_algbw_gb_s,allreduce_busbw_gb_s,allreduce_latency_at_min_bytes_us,error_message
 0,ok,all_reduce,1,1024,na (requires at least two GPUs),na (requires at least two GPUs),na (requires at least two GPUs),
 
 ## Metrics
 
-- **#1: Bus bandwidth at max message size, GB/s** — stored as `busbw_gb_s`.
-- **#2: Algorithm bandwidth at max message size, GB/s** — stored as `algbw_gb_s`.
-- **#3: Latency at min message size, us** — stored as `latency_us`.
+- **#1: All-reduce bus bandwidth at max message size, GB/s, na on single GPU** — stored as `allreduce_busbw_gb_s`.
+- **#2: All-reduce algorithm bandwidth at max message size, GB/s, na on single GPU** — stored as `allreduce_algbw_gb_s`.
+- **#3: All-reduce latency at min message size, us, na on single GPU** — stored as `allreduce_latency_at_min_bytes_us`.
 
 ## Framework
 
@@ -80,7 +80,7 @@ BENCHMARK_DB=tests/fixtures/benchmark.db \
 
 all_reduce_perf stdout in rccl_all_reduce.txt plus one CSV row. A single row is duplicated to two samples
 
-sample_index,status,collective,num_gpus,bytes,algbw_gb_s,busbw_gb_s,latency_us,error_message
+sample_index,status,collective,num_gpus,bytes,allreduce_algbw_gb_s,allreduce_busbw_gb_s,allreduce_latency_at_min_bytes_us,error_message
 0,ok,all_reduce,1,1024,na (requires at least two GPUs),na (requires at least two GPUs),na (requires at least two GPUs),
 
 ```bash

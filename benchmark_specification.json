@@ -37,7 +37,7 @@
   {
     "field_name": "Metrics",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "#1: Bus bandwidth at max message size, GB/s (busbw_gb_s); #2: Algorithm bandwidth at max message size, GB/s (algbw_gb_s); #3: Latency at min message size, us (latency_us)"
+    "value": "#1: All-reduce bus bandwidth at max message size, GB/s, na on single GPU (allreduce_busbw_gb_s); #2: All-reduce algorithm bandwidth at max message size, GB/s, na on single GPU (allreduce_algbw_gb_s); #3: All-reduce latency at min message size, us, na on single GPU (allreduce_latency_at_min_bytes_us)"
   },
   {
     "field_name": "Command Tools Executed",
@@ -97,7 +97,7 @@
   {
     "field_name": "Raw Output Example",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "sample_index,status,collective,num_gpus,bytes,algbw_gb_s,busbw_gb_s,latency_us,error_message\n0,ok,all_reduce,1,1024,na (requires at least two GPUs),na (requires at least two GPUs),na (requires at least two GPUs),"
+    "value": "sample_index,status,collective,num_gpus,bytes,allreduce_algbw_gb_s,allreduce_busbw_gb_s,allreduce_latency_at_min_bytes_us,error_message\n0,ok,all_reduce,1,1024,na (requires at least two GPUs),na (requires at least two GPUs),na (requires at least two GPUs),"
   },
   {
     "field_name": "run_benchmark Command Plus Options for Smoke Run",
@@ -117,7 +117,7 @@
   {
     "field_name": "Output Fields / Metrics to Parse",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "collective, num_gpus (ranks used), bytes (largest size), algbw_gb_s and busbw_gb_s (at the largest size), latency_us (at the smallest size)"
+    "value": "collective, num_gpus (ranks used), bytes (largest size), allreduce_algbw_gb_s and allreduce_busbw_gb_s (at the largest size), allreduce_latency_at_min_bytes_us (at the smallest size)"
   },
   {
     "field_name": "Success Criteria",
@@ -162,7 +162,7 @@
   {
     "field_name": "Python Version",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Python 3.14.N (uv-managed; all benchmark venvs). System Python 3.12.3 retained for OS and setup scripts only"
+    "value": "Python 3.14.8 (uv-managed CPython from `uv python install 3.14`; all benchmark venvs). System Python 3.12.3 retained for OS and setup scripts only"
   },
   {
     "field_name": "GPU Runtime Version (was ROCm Version)",
@@ -217,12 +217,12 @@
   {
     "field_name": "g++ Version",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "N/A - CMake not used"
+    "value": "N/A - g++ not used"
   },
   {
     "field_name": "Known Runtime Constraints (<=35 Words Each)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "rccl_perf always runs one rank on GPU 0, so the three metrics are na on every host until it is rewritten for multiple GPUs"
+    "value": "rccl_perf runs num_gpus ranks in one process (ncclCommInitAll) and measures all_reduce only. num_gpus is 1 in every profile, so the three metrics stay na until it is raised"
   },
   {
     "field_name": "Parameter_01",
@@ -362,7 +362,7 @@
   {
     "field_name": "Schema Last Updated",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "2026-09-05"
+    "value": "2026-10-17"
   },
   {
     "field_name": "Installation and Execution Summary",
