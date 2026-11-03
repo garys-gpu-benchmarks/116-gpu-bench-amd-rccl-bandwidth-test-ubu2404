@@ -2,14 +2,13 @@
 
 ## Execution Description
 
-Builds src/rccl_perf.cpp and runs bin/all_reduce_perf only. min_bytes, max_bytes, num_iterations, warmup_iters, step_factor, and num_gpus are forwarded. On one GPU the bandwidth metrics are na; two or more requested GPUs must initialize. Copied sibling perf names are not launched. Sweep dimensions: num_gpus, collective, min_bytes, max_bytes, step_factor, warmup_iters, num_iterations.
+Builds src/rccl_perf.cpp and runs bin/all_reduce_perf only. min_bytes, max_bytes, num_iterations, warmup_iters, step_factor, and num_gpus are forwarded. On one GPU the bandwidth metrics are na; two or more requested GPUs must initialize. Copied sibling perf names are not launched. Sweep dimensions: num_gpus, min_bytes, max_bytes, step_factor, warmup_iters, num_iterations.
 
 ## Parameters
 
 | Parameter | CLI Flag | Tested Values | Default | Description |
 | --- | --- | --- | --- | --- |
 | num_gpus | `--num-gpus` | smoke=1, baseline=1, extended=1 | 1 | From Parameter list; see Execution Description With Parameters. |
-| collective | `--collective` | smoke=all, baseline=all, extended=all | all | From Parameter list; see Execution Description With Parameters. |
 | min_bytes | `--min-bytes` | smoke=8, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
 | max_bytes | `--max-bytes` | smoke=1024, baseline=67108864, extended=67108864 | 67108864 | From Parameter list; see Execution Description With Parameters. |
 | step_factor | `--step-factor` | smoke=2, baseline=2, extended=2 | 2 | From Parameter list; see Execution Description With Parameters. |
