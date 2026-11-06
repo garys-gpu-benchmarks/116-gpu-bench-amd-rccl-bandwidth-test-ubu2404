@@ -2,7 +2,7 @@
 
 ## Execution Description
 
-Builds src/rccl_perf.cpp and runs bin/all_reduce_perf only. min_bytes, max_bytes, num_iterations, warmup_iters, step_factor, and num_gpus are forwarded. On one GPU the bandwidth metrics are na; two or more requested GPUs must initialize. Copied sibling perf names are not launched. Sweep dimensions: num_gpus, min_bytes, max_bytes, step_factor, warmup_iters, num_iterations.
+Builds src/rccl_perf.cpp and runs bin/all_reduce_perf only. min_bytes, max_bytes, num_iterations, warmup_iters, step_factor, and num_gpus are forwarded. On one GPU the bandwidth metrics are na; two or more requested GPUs must initialize. output_format: csv Sweep dimensions: num_gpus, min_bytes, max_bytes, step_factor, warmup_iters, num_iterations.
 
 ## Parameters
 
@@ -18,7 +18,7 @@ Builds src/rccl_perf.cpp and runs bin/all_reduce_perf only. min_bytes, max_bytes
 ## Invocation
 
 ```bash
-Build src/rccl_perf.cpp and run bin/all_reduce_perf. Copied sibling *_perf names are the same AllReduce probe and are not launched
+Build src/rccl_perf.cpp and run bin/all_reduce_perf across the message-size sweep
 ```
 
 ## Raw Output Format
@@ -45,7 +45,7 @@ Build src/rccl_perf.cpp and run bin/all_reduce_perf with yaml min_bytes, max_byt
 ## Platform Portability
 
 - **AMD (primary):** ```bash
-Build src/rccl_perf.cpp and run bin/all_reduce_perf. Copied sibling *_perf names are the same AllReduce probe and are not launched
+Build src/rccl_perf.cpp and run bin/all_reduce_perf across the message-size sweep
 ```
 - **NVIDIA:** Primary target is AMD ROCm. NVIDIA notes in this section are reference only and are not the execution path.
 

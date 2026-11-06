@@ -21,7 +21,7 @@ Build src/rccl_perf.cpp and run bin/all_reduce_perf with yaml min_bytes, max_byt
 Measure single-GPU RCCL AllReduce bandwidth from a custom probe
 
 ## Validation Objective
-Validates that RCCL runs all five collectives across the message-size sweep. With one rank there is no GPU-to-GPU traffic, so the three metrics are na (requires at least two GPUs)
+Validates RCCL AllReduce bandwidth and latency across the size sweep. One GPU reports na (needs two GPUs)
 
 ## Workload Category
 Memory, Bandwidth & Data Movement
