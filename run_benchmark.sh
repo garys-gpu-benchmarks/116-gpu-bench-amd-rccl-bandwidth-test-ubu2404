@@ -16,12 +16,11 @@ capture_benchmark_run_command_submitted "$@"
 
 usage() {
   cat <<'USAGE'
+
 Usage: bash run_benchmark.sh [OPTIONS]
 
 Workload Name:          RCCL Bandwidth Test.
 Main Goal:              Measure single-GPU RCCL AllReduce bandwidth from a custom probe.
-Validation Objective:   Validates RCCL AllReduce bandwidth and latency across the size sweep. One
-                        GPU reports na (needs two GPUs).
 Command Tools Executed: Build src/rccl_perf.cpp and run bin/all_reduce_perf across the message-size
                         sweep.
 
