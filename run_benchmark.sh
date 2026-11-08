@@ -19,10 +19,10 @@ usage() {
 
 Usage: bash run_benchmark.sh [OPTIONS]
 
-Workload Name:          RCCL Bandwidth Test.
-Main Goal:              Measure single-GPU RCCL AllReduce bandwidth from a custom probe.
+Workload Name:          RCCL Bandwidth Test
+Main Goal:              Measure single-GPU RCCL AllReduce bandwidth from a custom probe
 Command Tools Executed: Build src/rccl_perf.cpp and run bin/all_reduce_perf across the message-size
-                        sweep.
+                        sweep
 
 Profiles (default: --smoke):
   --smoke                       Run smoke profile

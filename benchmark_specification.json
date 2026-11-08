@@ -205,14 +205,14 @@
     "value": "MI300X"
   },
   {
-    "field_name": "Raw Output Format",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "all_reduce_perf stdout in rccl_all_reduce.txt plus one CSV row. A single row is duplicated to two samples"
-  },
-  {
     "field_name": "Primary Record Granularity",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "one row for all_reduce"
+  },
+  {
+    "field_name": "Raw Output Format",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "all_reduce_perf stdout in rccl_all_reduce.txt plus one CSV row. A single row is duplicated to two samples"
   },
   {
     "field_name": "Raw Output Example",
@@ -225,14 +225,14 @@
     "value": "collective, num_gpus (ranks used), bytes (largest size), allreduce_algbw_gb_s and allreduce_busbw_gb_s (at the largest size), allreduce_latency_at_min_bytes_us (at the smallest size)"
   },
   {
-    "field_name": "Success Criteria",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "every collective exits 0 and prints at least one size line"
-  },
-  {
     "field_name": "Parser and Normalization Notes",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "Below two ranks each metric is the text na (requires at least two GPUs), and summary.json reports that text. Bandwidth is taken at the largest size and latency at the smallest. There is no 1.0 fallback: a missing binary or unparsed output fails the run"
+  },
+  {
+    "field_name": "Success Criteria",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "every collective exits 0 and prints at least one size line"
   },
   {
     "field_name": "Hardware Config",
