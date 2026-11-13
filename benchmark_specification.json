@@ -40,6 +40,11 @@
     "value": "Build src/rccl_perf.cpp and run bin/all_reduce_perf across the message-size sweep"
   },
   {
+    "field_name": "Execution Description With Parameters",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Builds src/rccl_perf.cpp and runs bin/all_reduce_perf only. min_bytes, max_bytes, num_iterations, warmup_iters, step_factor, and num_gpus are forwarded. On one GPU the bandwidth metrics are na; two or more requested GPUs must initialize. output_format: csv"
+  },
+  {
     "field_name": "Metrics",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "#1: All-reduce bus bandwidth at max message size, GB/s, na on single GPU (allreduce_busbw_gb_s); #2: All-reduce algorithm bandwidth at max message size, GB/s, na on single GPU (allreduce_algbw_gb_s); #3: All-reduce latency at min message size, us, na on single GPU (allreduce_latency_at_min_bytes_us)"
@@ -173,11 +178,6 @@
     "field_name": "Command Methodology",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "Build src/rccl_perf.cpp and run only bin/all_reduce_perf over the yaml message-size sweep and requested num_gpus. Record bandwidth at the largest size and latency at the smallest. On one GPU those metrics are na; two or more requested GPUs must initialize. The other copied perf names are not launched"
-  },
-  {
-    "field_name": "Execution Description With Parameters",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Builds src/rccl_perf.cpp and runs bin/all_reduce_perf only. min_bytes, max_bytes, num_iterations, warmup_iters, step_factor, and num_gpus are forwarded. On one GPU the bandwidth metrics are na; two or more requested GPUs must initialize. output_format: csv"
   },
   {
     "field_name": "Execution Domain",
